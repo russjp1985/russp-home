@@ -1,0 +1,13 @@
+#!/bin/bash
+case "$1" in
+    jquery)
+        curl http://code.jquery.com/jquery-1.6.2.min.js > jquery.js
+        ;;
+
+    underscore)
+        curl http://documentcloud.github.com/underscore/underscore-min.js > underscore.js
+        ;;
+    *)
+        echo "I don't know wtf you want!"
+        ;;
+esac

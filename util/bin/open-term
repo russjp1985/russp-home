@@ -1,0 +1,14 @@
+#!/usr/bin/osascript
+on run path
+ set str_path to (text item 1 of path)
+ set cmd to "cd " & str_path
+ tell application "iTerm 2"
+    activate
+    set activeterm to (current terminal)
+    tell activeterm
+        tell the current session
+            write text cmd
+        end tell
+    end tell
+ end tell
+end run

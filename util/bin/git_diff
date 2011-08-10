@@ -1,0 +1,6 @@
+#!/usr/bin/python
+import vcs_diff
+
+vcs_diff.main({'cmd' :     'git diff',
+               'splitter': 'index '})
+

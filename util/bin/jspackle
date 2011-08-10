@@ -1,0 +1,11 @@
+#!/usr/bin/python2.6
+# EASY-INSTALL-ENTRY-SCRIPT: 'jspackle==0.0.6','console_scripts','jspackle'
+__requires__ = 'jspackle==0.0.6'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('jspackle==0.0.6', 'console_scripts', 'jspackle')()
+    )
+
