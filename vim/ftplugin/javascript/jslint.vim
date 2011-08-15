@@ -64,8 +64,8 @@ else
   let s:runjslint_ext = 'js'
   if exists("$JS_CMD")
     let s:cmd = "$JS_CMD"
-  elseif executable('/System/Library/Frameworks/JavaScriptCore.framework/Resources/jsc')
-    let s:cmd = '/System/Library/Frameworks/JavaScriptCore.framework/Resources/jsc'
+    "  elseif executable('/System/Library/Frameworks/JavaScriptCore.framework/Resources/jsc')
+    "let s:cmd = '/System/Library/Frameworks/JavaScriptCore.framework/Resources/jsc'
   elseif executable('node')
     let s:cmd = 'node'
   elseif executable('js')
@@ -128,7 +128,7 @@ function! s:JSLint()
   if a:firstline == a:lastline
     let b:firstline = 1
     let b:lastline = '$'
-  else 
+  else
     let b:firstline = a:firstline
     let b:lastline = a:lastline
   endif
