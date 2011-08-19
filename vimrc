@@ -26,6 +26,7 @@ autocmd BufWritePre * :%s/\s\+$//e
  au BufRead,BufNewFile *.js        set filetype=javascript
  au BufRead,BufNewFile *.json      set filetype=javascript
  au BufRead,BufNewFile *.mako      set filetype=mako
+ au BufRead,BufNewFile *.pp        set filetype=puppet
  au BufRead,BufNewFile *.py        set filetype=python
  au BufRead,BufNewFile *.t         set filetype=perl
  au BufRead,BufNewFile *.thtml     set filetype=php
