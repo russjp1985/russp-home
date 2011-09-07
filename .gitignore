@@ -1,6 +1,6 @@
 *.swp
 *.swo
 *.pyc
+vim/.netrwhist
 vim/plugin/nerdtree
 vim/plugin/nerdtree*
-
