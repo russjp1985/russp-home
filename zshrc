@@ -29,4 +29,5 @@ if [[ $TERM != 'dumb' ]]; then
     export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/russp/util/bin:/Users/russp/local/node/bin:/Users/russp/narwhal/bin:/opt/local/bin"
     RPROMPT="[%{$fg[cyan]%}%M%{$reset_color%}]"
 fi;
+export EDITOR=vim
 . ~/util/export_all.sh
