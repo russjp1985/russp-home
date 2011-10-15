@@ -1,13 +1,53 @@
-#!/bin/bash
-case "$1" in
-    jquery)
-        curl http://code.jquery.com/jquery-1.6.2.min.js > jquery.js
-        ;;
+#!/usr/bin/env coffee
+fs   = require 'fs'
+http = require 'http'
+sys  = require 'sys'
 
-    underscore)
-        curl http://documentcloud.github.com/underscore/underscore-min.js > underscore.js
-        ;;
-    *)
-        echo "I don't know wtf you want!"
-        ;;
-esac
+ansiColor = require "ansi-color"
+color = ansiColor.set
+
+print = ->
+  process.stdout.write.apply process.stdout, arguments
+
+libs =
+  backbone:   'http://documentcloud.github.com/backbone/backbone-min.js'
+  jquery:     'http://code.jquery.com/jquery-1.6.2.min.js'
+  json2:      'https://raw.github.com/douglascrockford/JSON-js/master/json2.js'
+  underscore: 'http://documentcloud.github.com/underscore/underscore-min.js'
+
+lib = process.argv[process.argv.length-1]
+
+if lib == "list"
+  for lib, url of libs
+    print lib+" "
+  print "\n"
+  process.exit()
+
+if not libs[lib]
+  print "You must provide a valid library name!\n\n"
+  process.exit()
+
+print "#{color("Gimme", "green+bold")} #{lib}!\n\n#{color("Downloading:", "blue")} #{libs[lib]}\n"
+
+url = libs[lib].replace 'http://', ''
+host =  url.split('/')[0]
+opts =
+  host: host
+  path: url.replace host, ''
+  port: 80
+
+writeFile = (contents, lib)->
+  fs.writeFile "./#{lib}.js", contents, ->
+    print "\n Saved as: #{lib}.js\n"
+
+contents = ''
+req = http.get opts, (resp)->
+  resp.on 'data', (data)->
+    contents += data.toString()
+    print color "=", 'bold'
+  resp.on 'end', ->
+    print color(">", "bold")+"\n"
+    writeFile contents, lib
+  resp.on 'error', ->
+    print color "Could not connect to server!", "red"
+    process.exit()
