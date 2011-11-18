@@ -3,11 +3,7 @@
 . ~/util/alias.sh
 . ~/util/testing.sh
 . ~/util/functions/*.sh
-. ~/Checkouts/bk/bk.zsh
+. ~/util/bk/bk.zsh
 
 PATH=$PATH:~/util/bin
 export PATH
-
-if [ -d ~/greenarc_util ]; then
-    . ~/greenarc_util/export.sh
-fi
