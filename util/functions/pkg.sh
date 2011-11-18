@@ -30,22 +30,3 @@ __pkg(){
     eval "reply=($opts)"
 }
 compctl -K __pkg pkg
-
-# Completion for BK - file system bookmarker
-function bk_avail {
-    opts=`ls /Users/russp/.bk/`
-    eval "reply=($opts)"
-}
-compctl -K bk_avail bk
-
-# Vagrant auto-complete
-function __vagrant {
-    VM=''
-    CMD="init"
-    if [ -f "Vagrantfile" ]; then
-        VM=`cat Vagrantfile | awk /vm.define/'{print \$2}' | paste -s -d : - | sed s/:/\ /g | sed s/\ \ /\ /g`
-        CMD="up down halt ssh destroy reload provision"
-    fi
-    eval "reply=($VM $CMD)"
-}
-#compctl -K __vagrant vagrant

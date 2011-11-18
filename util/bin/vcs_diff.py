@@ -56,7 +56,7 @@ def main(opts):
         diff_output(files[x])
         path = files[x].split("\n")[0].replace('Index: ', '')
         s = raw_input(("\n\n\n\n\n\nFile {0} of {1} -  "\
-                      + "Continue? [ (p)rev / (r)evert / (e)dit ]   -  ")\
+                      + "Continue? [ (p)rev / (r)estore / (e)dit ]   -  ")\
                       .format(x, len(files)-1))
         if s == 'p':
             # Previous file
@@ -66,11 +66,12 @@ def main(opts):
 
         if s == 'r':
             # Revert file ... confirm first
-            confirm = raw_input("Are you sure you want to revert this file? "\
+            confirm = raw_input("Are you sure you want to restore this file? "\
                                 "(yes/no): ")
             if confirm == 'yes':
-                sub.Popen('svn revert {0}'.format(path),
-                         shell=True).communicate()
+                cmd = opts['restore'].format(path)
+                print cmd
+                sub.Popen(cmd, shell=True).communicate()
                 raw_input("\n\n[Press any key to continue]")
             else:
                 x -= 1
