@@ -3,6 +3,7 @@
 . ~/util/alias.sh
 . ~/util/testing.sh
 . ~/util/functions/*.sh
+. ~/Checkouts/bk/bk.zsh
 
 PATH=$PATH:~/util/bin
 export PATH
