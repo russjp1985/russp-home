@@ -13,3 +13,6 @@
 [submodule "vim/bundle/vim-jade"]
 	path = vim/bundle/vim-jade
 	url = https://github.com/vim-scripts/jade.vim.git
+[submodule "util/bk"]
+	path = util/bk
+	url = https://github.com/russjp1985/bk.git
