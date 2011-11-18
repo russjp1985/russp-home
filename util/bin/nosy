@@ -8,12 +8,22 @@ Watch for changes in all .py files. If changes, run nosetests.
 # Based on original nosy.py by Jeff Winkler, http://jeffwinkler.net
 
 
-import sys, glob, os, stat, time
-import subprocess
 import re
+import subprocess
+import sys, glob, os, stat, time
 
+from optparse import OptionParser
 
-FILE_REGEX = re.compile(r'(py|php|txt|html|rb|feature|js|scss|coffee|conf|README)$')
+parser = OptionParser()
+parser.add_option('-t', '--type', dest='type', default=False)
+(options, args) = parser.parse_args()
+
+type = 'py|php|txt|html|rb|feature|js|scss|coffee|conf|README'
+if options.type:
+    type = options.type
+
+cmd = " ".join(args)
+FILE_REGEX = re.compile(r'({0})$'.format(type))
 STAT_INTERVAL = .25 # seconds
 CRAWL_INTERVAL = 10 # seconds
 
@@ -107,8 +117,8 @@ def main():
 
     for changed_paths in change_generator():
         print_changes(changed_paths)
-        print ' '.join(sys.argv[1:])
-        os.system(' '.join(sys.argv[1:]))
+        print cmd
+        os.system(cmd)
 
 if __name__ == '__main__':
     main()
