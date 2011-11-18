@@ -1,4 +1,5 @@
 . ~/util/alias.sh
+. ~/util/update.sh
 . ~/util/functions/*.sh
 
 # Utilities
