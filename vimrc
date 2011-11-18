@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 syntax on
 set ruler
 set noerrorbells
@@ -92,4 +94,3 @@ augroup JumpCursorOnEdit
 augroup END
 
 colorscheme russp
-
