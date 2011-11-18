@@ -28,6 +28,10 @@ if [[ $TERM != 'dumb' ]]; then
     export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.6/bin:/opt/local/bin:/usr/local/bin:$PATH"
     export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/russp/util/bin:/Users/russp/local/node/bin:/Users/russp/narwhal/bin:/opt/local/bin"
     RPROMPT="[%{$fg[cyan]%}%M%{$reset_color%}]"
+    NODE_PATH="$NODE_PATH:/usr/local/lib/node_modules"
+    #PROMPT="%{$fg_bold[cyan]%}%c %{$reset_color%} $ "
+    source /Users/russp/.rvm/src/rvm/scripts/rvm
+    alias md5sum='md5 -r'
 fi;
 export EDITOR=vim
 . ~/util/export_all.sh
