@@ -1,6 +1,8 @@
 alias ll="ls -l"
 alias la="la -A"
 
+alias yui="java -jar ~/util/tools/yui-compressor.jar"
+
 compctl -K __vs vs
 
 function gvim() {
