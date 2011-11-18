@@ -1231,7 +1231,7 @@ BEGIN {
         go          => [qw( go )],
         haskell     => [qw( hs lhs )],
         hh          => [qw( h )],
-        html        => [qw( htm html shtml xhtml )],
+        html        => [qw( htm html shtml thtml xhtml )],
         java        => [qw( java properties )],
         js          => [qw( js )],
         jsp         => [qw( jsp jspx jhtm jhtml )],
