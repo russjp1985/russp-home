@@ -4,3 +4,4 @@
 vim/.netrwhist
 vim/plugin/nerdtree
 vim/plugin/nerdtree*
+*.DS_Store
