@@ -16,3 +16,6 @@
 [submodule "util/bk"]
 	path = util/bk
 	url = https://github.com/russjp1985/bk.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
