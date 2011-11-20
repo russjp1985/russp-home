@@ -20,21 +20,16 @@ then
   fi
 
   epoch_diff=$(($(_current_epoch) - $LAST_EPOCH))
-  if [ $epoch_diff -gt 6 ]
+  if [ $epoch_diff -gt 1 ]
   then
-    echo "[russp] Would you like to check for updates?"
-    echo "Type Y to update russp: \c"
-    read line
-    if [ "$line" = Y ] || [ "$line" = y ]
-    then
-      cd ~/util
-      git pull origin master
-      git status
-      echo "\n\n Don't forget to push your uncommitted changes!"
+    echo "Daily update of dot files...\c"
+    cd ~/util
+    git pull origin master
+    git status
+    echo "\n\n Don't forget to push your uncommitted changes!"
 
-      # update the russp file
-      _update_russp_update
-    fi
+    # update the russp file
+    _update_russp_update
   fi
 else
   # create the russp file
