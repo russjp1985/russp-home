@@ -4,9 +4,6 @@
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
 	url = https://github.com/vim-scripts/vim-coffee-script.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/vim-scripts/Syntastic.git
 [submodule "vim/bundle/vim-jasmine"]
 	path = vim/bundle/vim-jasmine
 	url = https://github.com/thomd/vim-jasmine.git
