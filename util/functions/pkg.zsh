@@ -1,9 +1,9 @@
-PKGDIR=~/svn/packages
+PKGDIR=$HOME/svn/packages
 
 # Package navigation
 #
 # Uses $PKGDIR variable to dynamically naviated package checkouts
-pkg () {
+function pkg() {
     if [ -n "$1" ]; then
         if [ -d "$PKGDIR/$1/trunk" ]; then
             echo "Found package $PKGDIR/$1"
@@ -25,7 +25,7 @@ pkg () {
         ls -l
     fi
 }
-__pkg(){
+function __pkg() {
     opts=`ls $PKGDIR | sed s/python-//g | sed s/php5-//g | sed s/lib//g | sed s/js-//g`
     eval "reply=($opts)"
 }

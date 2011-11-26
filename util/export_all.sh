@@ -1,6 +1,9 @@
 . ~/util/alias.sh
 . ~/util/update.sh
-. ~/util/functions/*.sh
+
+# Custom zsh functions
+. ~/util/functions/pkg.zsh
+. ~/util/functions/gth.zsh
 
 # Utilities
 . ~/util/bk/bk.zsh
