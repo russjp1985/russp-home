@@ -1,3 +1,4 @@
+let colors_name = "grussp"
 
 hi clear
 if exists("syntax_on")
@@ -23,7 +24,7 @@ hi Directory		   ctermfg=LightCyan  guifg=LightCyan   gui=none
 hi ErrorMsg		term=standout  ctermbg=DarkRed	  ctermfg=White guibg=DarkRed guifg=White   gui=none
 hi IncSearch	term=reverse   cterm=reverse	  gui=reverse   gui=none
 hi LineNr		term=underline ctermfg=Yellow					guifg=Yellow    gui=none
-hi ModeMsg			   c		  gui=none
+hi ModeMsg		gui=none
 hi MoreMsg			   ctermfg=LightGreen gui=none		guifg=LightGreen
 hi NonText			   ctermfg=LightMagenta		  gui=none		guifg=LightMagenta
 hi Question		term=standout  ctermfg=LightGreen gui=none		guifg=LightGreen
