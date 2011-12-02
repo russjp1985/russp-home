@@ -23,9 +23,7 @@ then
   if [ $epoch_diff -gt 1 ]
   then
     echo "Daily update of dot files...\c"
-    cd ~/util
-    git pull origin master
-    git status
+    ~/util/bin/update-dot-files
     echo "\n\n Don't forget to push your uncommitted changes!"
 
     # update the russp file
