@@ -20,7 +20,6 @@ set list listchars=tab:»·,trail:·
 autocmd BufWritePre * :%s/\s\+$//e
 
  au BufRead,BufNewFile *.ctp       set filetype=php
- au BufRead,BufNewFile *.coffee    set filetype=coffee
  au BufRead,BufNewFile *.htm       set filetype=php
  au BufRead,BufNewFile *.html      set filetype=php
  au BufRead,BufNewFile *.j         set filetype=objj
