@@ -1,0 +1,7 @@
+tell application "Safari"
+activate
+set the bounds of the first window to {140, 0, 1160, 775}
+try
+set the bounds of the second window to {150, 0, 1130, 775}
+end try
+end tell
