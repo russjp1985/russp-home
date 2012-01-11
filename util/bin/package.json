@@ -1,0 +1,18 @@
+{
+  "author": "Russ <russ@russposluszny.com> (http://www.russposluszny.com)",
+  "name": "bin",
+  "description": "A collection of bin scripts. This only exists to track dependencies",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/russjp1985/russp-home.git"
+  },
+  "engines": {
+    "node": "~0.6.3"
+  },
+  "dependencies": {
+    "ansi-color",
+    "coffee-script"
+  },
+  "devDependencies": {}
+}
