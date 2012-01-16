@@ -35,3 +35,9 @@ if [[ $TERM != 'dumb' ]]; then
 fi;
 export EDITOR=vim
 . ~/util/export_all.sh
+
+function nt_avail {
+    opts=`nodey-tools list --quiet`
+    eval "reply=($opts)"
+}
+compctl -K nt_avail nodey-tools
