@@ -7,17 +7,21 @@ set number
 set ignorecase
 set visualbell
 
+set ci sc wmnu nosol bs=indent,eol,start ls=1
+
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
+set mouse=a
 
-set foldmethod=syntax
-set foldlevel=100
-set list listchars=tab:»·,trail:·
+set list!
+set listchars=tab:>.
+set listchars=trail:.
 
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
+
 
  au BufRead,BufNewFile *.ctp       set filetype=php
  au BufRead,BufNewFile *.htm       set filetype=php
@@ -34,6 +38,10 @@ autocmd BufWritePre * :%s/\s\+$//e
  au BufRead,BufNewFile *nginx*     set filetype=nginx
  au BufRead,BufNewFile Vagrantfile set filetype=ruby
 
+ " Apache config files
+ au BufRead,BufNewFile /etc/httpd/conf* set filetype=apache
+ au BufRead,BufNewFile /etc/apache2*    set filetype=apache
+
 " Puppet syntax: use 2-tabs
 autocmd FileType puppet setlocal shiftwidth=2 tabstop=2
 
@@ -47,14 +55,10 @@ vnoremap < <gv
 vnoremap > >gv
 nmap     <C-K> :set invpaste<CR>
 nmap     <C-N> :set invnumber<CR>
-
-
-""" PHP
-" Doc functions
-source ~/.vim/php-doc.vim
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR>
+nmap     <C-M> :set mouse=<CR>:set nonumber<CR>
+noremap  <C-J> :set mouse=a<CR>:set number<CR>
+map  <D-S> :w<CR>
+map  <C-S> :w<CR>
 
 """ Position
 
@@ -65,6 +69,7 @@ vnoremap <C-P> :call PhpDocRange()<CR>
 "  % : saves and restores the buffer list
 "  n... : where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.viminfo
+
 
 " when we reload, tell vim to restore the cursor to the saved position
 augroup JumpCursorOnEdit

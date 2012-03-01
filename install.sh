@@ -4,5 +4,5 @@ ln -s `pwd`/zshrc ~/.zshrc
 ln -s `pwd`/gvimrc ~/.gvimrc
 ln -s `pwd`/util ~/util
 
-git submodule init --update
+git submodule update  --init
 zsh

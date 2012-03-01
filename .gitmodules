@@ -31,3 +31,12 @@
 [submodule "vim/bundle/scss-syntax"]
 	path = vim/bundle/scss-syntax
 	url = https://github.com/cakebaker/scss-syntax.vim.git
+[submodule "vim/bundle/vim-bufexplorer"]
+	path = vim/bundle/vim-bufexplorer
+	url = https://github.com/thisivan/vim-bufexplorer.git
+[submodule "vim/bundle/vim-phpcs"]
+	path = vim/bundle/vim-phpcs
+	url = https://github.com/bpearson/vim-phpcs.git
+[submodule "vim/bundle/vim-git"]
+	path = vim/bundle/vim-git
+	url = https://github.com/tpope/vim-git.git

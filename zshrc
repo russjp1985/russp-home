@@ -1,4 +1,15 @@
 # Path to your oh-my-zsh configuration.
+if [[ -f $HOME/.lwd ]]; then
+    cd `cat $HOME/.lwd`
+fi
+
+if [[ -f $HOME/.hostname ]]; then
+    HOST_ALIAS=`cat $HOME/.hostname`
+else
+    HOST_ALIAS=`hostname`
+fi;
+
+
 if [[ $TERM != 'dumb' ]]; then
     export ZSH=$HOME/.oh-my-zsh
 
@@ -22,22 +33,27 @@ if [[ $TERM != 'dumb' ]]; then
 
     source $ZSH/oh-my-zsh.sh
 
-    defaults -currentHost write -globalDomain AppleFontSmoothing -int 3
+    # defaults -currentHost write -globalDomain AppleFontSmoothing -int 3
 
     # Customize to your needs...
-    export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.6/bin:/opt/local/bin:/usr/local/bin:$PATH"
-    export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/russp/util/bin:/Users/russp/local/node/bin:/Users/russp/narwhal/bin:/opt/local/bin"
-    RPROMPT="[%{$fg[cyan]%}%M%{$reset_color%}]"
+    #export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.6/bin:/opt/local/bin:/usr/local/bin:$PATH"
+    #export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/russp/util/bin:/Users/russp/local/node/bin:/Users/russp/narwhal/bin:/opt/local/bin"
+    RPROMPT="[%{$fg[green]%}${HOST_ALIAS}%{$reset_color%}]"
+    PATH="$HOME/node/bin:$PATH"
     NODE_PATH="$NODE_PATH:/usr/local/lib/node_modules"
     #PROMPT="%{$fg_bold[cyan]%}%c %{$reset_color%} $ "
-    source /Users/russp/.rvm/src/rvm/scripts/rvm
     alias md5sum='md5 -r'
 fi;
+
+if [[ $MODE == 'mini' ]]; then
+    PROMPT=""
+    PROMPT="\r==============\r$ "
+    clear
+fi;
+
 export EDITOR=vim
 . ~/util/export_all.sh
 
-function nt_avail {
-    opts=`nodey-tools list --quiet`
-    eval "reply=($opts)"
-}
-compctl -K nt_avail nodey-tools
+if [[ -f $HOME/.loc.zsh ]]; then
+    source $HOME/.loc.zsh
+fi;
