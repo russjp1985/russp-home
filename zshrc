@@ -22,7 +22,7 @@ if [[ $TERM != 'dumb' ]]; then
 
     source $ZSH/oh-my-zsh.sh
 
-    defaults -currentHost write -globalDomain AppleFontSmoothing -int 3
+    # defaults -currentHost write -globalDomain AppleFontSmoothing -int 3
 
     # Customize to your needs...
     export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.6/bin:/opt/local/bin:/usr/local/bin:$PATH"
@@ -30,7 +30,6 @@ if [[ $TERM != 'dumb' ]]; then
     RPROMPT="[%{$fg[cyan]%}%M%{$reset_color%}]"
     NODE_PATH="$NODE_PATH:/usr/local/lib/node_modules"
     #PROMPT="%{$fg_bold[cyan]%}%c %{$reset_color%} $ "
-    source /Users/russp/.rvm/src/rvm/scripts/rvm
     alias md5sum='md5 -r'
 fi;
 export EDITOR=vim
@@ -41,3 +40,5 @@ function nt_avail {
     eval "reply=($opts)"
 }
 compctl -K nt_avail nodey-tools
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

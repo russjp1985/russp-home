@@ -12,9 +12,10 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
+set mouse=a
 
-set foldmethod=syntax
-set foldlevel=100
+" set foldmethod=syntax
+" set foldlevel=100
 set list listchars=tab:»·,trail:·
 
 autocmd BufWritePre * :%s/\s\+$//e
