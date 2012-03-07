@@ -1,4 +1,8 @@
 # Path to your oh-my-zsh configuration.
+if [[ -f $HOME/.lwd ]]; then
+    cd `cat $HOME/.lwd`
+fi
+
 if [[ $TERM != 'dumb' ]]; then
     export ZSH=$HOME/.oh-my-zsh
 
@@ -25,20 +29,17 @@ if [[ $TERM != 'dumb' ]]; then
     # defaults -currentHost write -globalDomain AppleFontSmoothing -int 3
 
     # Customize to your needs...
-    export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.6/bin:/opt/local/bin:/usr/local/bin:$PATH"
-    export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/russp/util/bin:/Users/russp/local/node/bin:/Users/russp/narwhal/bin:/opt/local/bin"
-    RPROMPT="[%{$fg[cyan]%}%M%{$reset_color%}]"
+    #export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.6/bin:/opt/local/bin:/usr/local/bin:$PATH"
+    #export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/russp/util/bin:/Users/russp/local/node/bin:/Users/russp/narwhal/bin:/opt/local/bin"
+    RPROMPT="[%{$fg[green]%}%M%{$reset_color%}]"
     NODE_PATH="$NODE_PATH:/usr/local/lib/node_modules"
     #PROMPT="%{$fg_bold[cyan]%}%c %{$reset_color%} $ "
     alias md5sum='md5 -r'
 fi;
+
 export EDITOR=vim
 . ~/util/export_all.sh
 
-function nt_avail {
-    opts=`nodey-tools list --quiet`
-    eval "reply=($opts)"
-}
-compctl -K nt_avail nodey-tools
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [[ -f $HOME/.loc.zsh ]]; then
+    source $HOME/.loc.zsh
+fi;

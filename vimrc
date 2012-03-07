@@ -18,7 +18,7 @@ set mouse=a
 " set foldlevel=100
 set list listchars=tab:»·,trail:·
 
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
 
  au BufRead,BufNewFile *.ctp       set filetype=php
  au BufRead,BufNewFile *.htm       set filetype=php
@@ -48,6 +48,8 @@ vnoremap < <gv
 vnoremap > >gv
 nmap     <C-K> :set invpaste<CR>
 nmap     <C-N> :set invnumber<CR>
+nmap     <C-M> :set mouse=<CR>:set nonumber<CR>
+noremap  <C-J> :set mouse=a<CR>:set number<CR>
 
 
 """ PHP

@@ -8,5 +8,5 @@
 # Utilities
 . ~/util/bk/bk.zsh
 
-PATH=$PATH:~/util/bin
+PATH=~/util/bin:$PATH
 export PATH
