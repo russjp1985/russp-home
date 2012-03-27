@@ -3,6 +3,12 @@ if [[ -f $HOME/.lwd ]]; then
     cd `cat $HOME/.lwd`
 fi
 
+if [[ -f $HOME/.hostname ]]; then
+    HOST_ALIAS=`cat $HOME/.hostname`
+else
+    HOST_ALIAS=`hostname`
+fi;
+
 if [[ $TERM != 'dumb' ]]; then
     export ZSH=$HOME/.oh-my-zsh
 
@@ -31,7 +37,7 @@ if [[ $TERM != 'dumb' ]]; then
     # Customize to your needs...
     #export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.6/bin:/opt/local/bin:/usr/local/bin:$PATH"
     #export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/russp/util/bin:/Users/russp/local/node/bin:/Users/russp/narwhal/bin:/opt/local/bin"
-    RPROMPT="[%{$fg[green]%}%M%{$reset_color%}]"
+    RPROMPT="[%{$fg[green]%}${HOST_ALIAS}%{$reset_color%}]"
     PATH="$HOME/node/bin:$PATH"
     NODE_PATH="$NODE_PATH:/usr/local/lib/node_modules"
     #PROMPT="%{$fg_bold[cyan]%}%c %{$reset_color%} $ "
