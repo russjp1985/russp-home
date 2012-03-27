@@ -25,7 +25,7 @@ set listchars=trail:.
 
  au BufRead,BufNewFile *.ctp       set filetype=php
  au BufRead,BufNewFile *.htm       set filetype=php
- au BufRead,BufNewFile *.html      set filetype=php
+ au BufRead,BufNewFile *.html      set filetype=html
  au BufRead,BufNewFile *.j         set filetype=objj
  au BufRead,BufNewFile *.jade      set filetype=jade
  au BufRead,BufNewFile *.js        set filetype=javascript
