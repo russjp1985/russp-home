@@ -32,9 +32,16 @@ if [[ $TERM != 'dumb' ]]; then
     #export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.6/bin:/opt/local/bin:/usr/local/bin:$PATH"
     #export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/russp/util/bin:/Users/russp/local/node/bin:/Users/russp/narwhal/bin:/opt/local/bin"
     RPROMPT="[%{$fg[green]%}%M%{$reset_color%}]"
+    PATH="$HOME/node/bin:$PATH"
     NODE_PATH="$NODE_PATH:/usr/local/lib/node_modules"
     #PROMPT="%{$fg_bold[cyan]%}%c %{$reset_color%} $ "
     alias md5sum='md5 -r'
+fi;
+
+if [[ $MODE == 'mini' ]]; then
+    PROMPT=""
+    PROMPT="\r==============\r$ "
+    clear
 fi;
 
 export EDITOR=vim
