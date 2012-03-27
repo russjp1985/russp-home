@@ -40,7 +40,7 @@ fi;
 
 if [[ $MODE == 'mini' ]]; then
     PROMPT=""
-    PROMPT="\r==============\r$ "
+    PROMPT="=============================$ "
     clear
 fi;
 
