@@ -16,6 +16,7 @@ from optparse import OptionParser
 
 parser = OptionParser()
 parser.add_option('-t', '--type', dest='type', default=False)
+parser.add_option('-p', '--pwd', dest='pwd', default=None)
 (options, args) = parser.parse_args()
 
 type = 'py|php|txt|html|rb|feature|js|scss|coffee|conf|README'
@@ -118,7 +119,12 @@ def main():
     for changed_paths in change_generator():
         print_changes(changed_paths)
         print cmd
+        if options.pwd:
+            cwd = os.getcwd()
+            os.chdir(options.pwd)
         os.system(cmd)
+        if options.pwd:
+            os.chdir(cwd)
 
 if __name__ == '__main__':
     main()
