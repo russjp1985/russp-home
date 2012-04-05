@@ -7,6 +7,11 @@ alias there="cd \`pbpaste\`"
 alias nodeytool="~/Checkouts/nodey-tools/bin"
 alias git="env GIT_SSL_NO_VERIFY=true git"
 alias lc="clear; ls --width=1"
+
+function trash() {
+    mv $* ~/.Trash
+}
+
 function mini() {
   zsh
   RPROMPT=''
@@ -20,6 +25,11 @@ function cim() {
   touch $1;
   vim $1
 }
+
+function hist() {
+    history | grep -v "history |" | grep -v "hist " | grep $* | tail | grep $*
+}
+
 
 function gitview() {
   URL_BASE=git remote -v | grep origin | grep fetch | awk '{print $2}' | sed s/git\:/https:/ | sed s/\.git$//
