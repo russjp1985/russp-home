@@ -40,6 +40,7 @@ if [[ $TERM != 'dumb' ]]; then
     RPROMPT="[%{$fg[green]%}${HOST_ALIAS}%{$reset_color%}]"
     PATH="$HOME/node/bin:$PATH"
     NODE_PATH="$NODE_PATH:/usr/local/lib/node_modules"
+    PATH="$HOME/.bin:$PATH"
     #PROMPT="%{$fg_bold[cyan]%}%c %{$reset_color%} $ "
     alias md5sum='md5 -r'
 fi;
