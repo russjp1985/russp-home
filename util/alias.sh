@@ -9,6 +9,8 @@ alias git="env GIT_SSL_NO_VERIFY=true git"
 alias lc="clear; ls --width=1"
 alias sha1sum="shasum"
 
+alias mvim="open /Applications/MacVim.app"
+
 function trash() {
     mv $* ~/.Trash
 }
