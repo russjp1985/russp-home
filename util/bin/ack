@@ -1230,6 +1230,7 @@ BEGIN {
         fortran     => [qw( f f77 f90 f95 f03 for ftn fpp )],
         go          => [qw( go )],
         haskell     => [qw( hs lhs )],
+        text        => [qw( txt )],
         hh          => [qw( h )],
         html        => [qw( htm html shtml thtml xhtml )],
         java        => [qw( java properties )],
