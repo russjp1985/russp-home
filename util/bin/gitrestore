@@ -1,7 +1,8 @@
 #!/bin/sh
-git reset origin/master --hard
+BRANCH=`git branch | grep '*' | sed s/\*//g | sed s/\ //g`
+git reset origin/$BRANCH --hard
 git clean -xfd
 git fetch origin
-git pull origin master
+git pull origin $BRANCH
 clear
 git log -n 6
