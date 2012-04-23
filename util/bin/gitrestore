@@ -3,5 +3,5 @@ git reset origin/master --hard
 git clean -xfd
 git fetch origin
 git pull origin master
-git log -n 1
-
+clear
+git log -n 6
