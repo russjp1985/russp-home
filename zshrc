@@ -57,3 +57,5 @@ export EDITOR=vim
 if [[ -f $HOME/.loc.zsh ]]; then
     source $HOME/.loc.zsh
 fi;
+
+PATH="$HOME/dev/DevTools:$PATH"
