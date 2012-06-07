@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+# Usage:
+   $ git_clean_review    # Interactive mode
+   $ git_clean_review -y # Force YES
+
+<?php
+$opts = getopt('y');
+define('YES', isset($opts['y']));
+
+function ask($question) {
+    if (YES) {
+        echo "$question -- YES\n";
+        return true;
+    }
+    $answer = strtoupper(trim(readline("$question [y/N] ")));
+    return ($answer == 'Y' || $answer == 'YES');
+}
+
+$me = trim(`whoami`);
+if (ask("Do you want to prune your local repo?")) {
+    `git remote prune origin`;
+}
+$your_branch_list = trim(`git branch -r | grep $me`);
+if ($your_branch_list == '') {
+    $your_branches = array();
+} else {
+    $your_branches = explode("\n", $your_branch_list);
+}
+$count = count($your_branches);
+
+echo "Found $count review branches of yours on origin!\n";
+$removed = 0;
+foreach($your_branches as $branch) {
+    $branch = str_replace('origin/', '', strtolower(trim($branch)));
+    if (ask("Remove review branch `$branch`?")) {
+        echo `git push origin :$branch`;
+        $removed++;
+    } else {
+        echo "     ... skipping\n";
+    }
+}
+echo "Removed $removed review branches.\n";
