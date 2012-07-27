@@ -10,8 +10,6 @@ alias lc="clear; ls --width=1"
 alias ec="edit-class"
 alias sha1sum="shasum"
 
-alias mvim="open /Applications/MacVim.app ."
-
 function trash() {
     mv $* ~/.Trash
 }
