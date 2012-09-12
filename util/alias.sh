@@ -9,6 +9,7 @@ alias git="env GIT_SSL_NO_VERIFY=true git"
 alias lc="clear; ls --width=1"
 alias ec="edit-class"
 alias sha1sum="shasum"
+alias now="php -r 'echo time();'"
 
 function trash() {
     mv $* ~/.Trash
