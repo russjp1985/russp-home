@@ -43,3 +43,6 @@
 [submodule "vim/bundle/vim-jst"]
 	path = vim/bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
+[submodule "util/bin/remindme"]
+	path = util/bin/remindme
+	url = git@github.com:russjp1985/remindme.git
