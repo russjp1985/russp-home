@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+
+function ensure_dir($dirname) {
+    if (is_dir($dirname)) {
+        return true;
+    }
+    $parent = dirname($dirname);
+    if (!is_dir($parent)) {
+        ensure_dir($parent);
+    }
+    echo " Creating directory --> $dirname\n";
+    mkdir($dirname);
+}
+
+$cur_dir = getcwd();
+$class_name = array_pop($argv);
+echo " * Creating class $class_name\n";
+
+$parts = explode('_', $class_name);
+$file = join('/', $parts).'.php';
+$full_path = $cur_dir.'/phplib/'.$file;
+echo " * Creating file $full_path\n";
+
+if (file_exists($full_path)) {
+    echo "File $full_path already exists!\n";
+    exit(1);
+}
+
+ensure_dir(dirname($full_path));
+$source = join("\n", array('<?php', '', "class $class_name {", '', '}'));
+file_put_contents($full_path, $source);
+exec("open -a /Applications/MacVim.app $full_path");
