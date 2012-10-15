@@ -19,5 +19,5 @@ fu! CopyCurrentFile()
 endfunction
 
 " Define some commands
-command! Ep :call  Edit_call('Edit_php_class')
+command! Ep :call Edit_call('Edit_php_class')
 command! Cp :call CopyCurrentFile()
