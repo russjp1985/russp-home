@@ -55,8 +55,9 @@ fi;
 export EDITOR=vim
 . ~/util/export_all.sh
 
-if [[ -f $HOME/.loc.zsh ]]; then
-    source $HOME/.loc.zsh
+if [[ -f $HOME/Checkouts/local-scripts/init.sh ]]; then
+    export LOCAL_SCRIPTS=$HOME/Checkouts/local-scripts
+    source $HOME/Checkouts/local-scripts/init.sh
 fi;
 
 PATH="$HOME/dev/DevTools:$PATH"
