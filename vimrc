@@ -98,3 +98,5 @@ augroup JumpCursorOnEdit
 augroup END
 
 colorscheme russp
+
+call pathogen#infect('~/Checkouts/local-scripts/vim-bundles')
