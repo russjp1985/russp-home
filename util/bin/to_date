@@ -1,0 +1,30 @@
+#!/usr/bin/env php
+<?php
+function usage() {
+    echo <<<USAGE
+to_date [-d unix timestamp] [-z timezone|-u] [-h]
+
+Echoes the provided unix timestamp back as a human readable (and database formatted) timestamp.
+Options:
+    -h          This help message
+    -d <date>   The unix timestamp provided (defaults to now)
+    -
+USAGE;
+}
+
+
+$opts = getopt('d:z:uh');
+if (isset($opts['h'])) {
+    usage();
+}
+if (empty($opts['d'])) {
+    $opts['d'] = time();
+}
+if (isset($opts['u'])) {
+    $opts['z'] = 'UTC';
+} else if (empty($opts['z'])) {
+    $opts['z'] = 'America/New_York';
+}
+date_default_timezone_set($opts['z']);
+
+echo date('Y-m-d H:i:sO (e)', $opts['d'])."\n";
