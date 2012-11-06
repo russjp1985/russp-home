@@ -28,7 +28,6 @@ if [[ $TERM != 'dumb' ]]; then
     # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
     # Example format: plugins=(rails git textmate ruby lighthouse)
     plugins=(git osx vagrant vi-mode svn brew )
-    chpwd () { print -Pn "\e]0;%m: %~\a" }
 
     source $ZSH/oh-my-zsh.sh
 

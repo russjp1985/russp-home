@@ -2,7 +2,6 @@
 . ~/util/update.sh
 
 # Custom zsh functions
-. ~/util/functions/pkg.zsh
 . ~/util/functions/gth.zsh
 
 # Utilities
