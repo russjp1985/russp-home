@@ -41,3 +41,7 @@ function cd() {
   builtin cd $*
   echo `pwd` > ~/.lwd
 }
+
+function growl() {
+    xargs -Ix echo $(export x=x; echo -e \$'\e]9;'${x}'\007');
+}
