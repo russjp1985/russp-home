@@ -99,4 +99,7 @@ augroup END
 
 colorscheme russp
 
+nmap <C-T> :FufFile<CR>
+nmap <C-B> :FufBuffer<CR>
+
 call pathogen#infect('~/Checkouts/local-scripts/vim-bundles')
