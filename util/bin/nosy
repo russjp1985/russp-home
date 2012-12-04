@@ -19,7 +19,7 @@ parser.add_option('-t', '--type', dest='type', default=False)
 parser.add_option('-p', '--pwd', dest='pwd', default=None)
 (options, args) = parser.parse_args()
 
-type = 'py|php|txt|html|rb|feature|js|scss|css|jstd|tpl|coffee|conf|README'
+type = 'py|php|ppp|txt|html|rb|feature|js|scss|css|jstd|tpl|coffee|conf|README'
 if options.type:
     type = options.type
 

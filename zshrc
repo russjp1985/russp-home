@@ -41,6 +41,7 @@ if [[ $TERM != 'dumb' ]]; then
     NODE_PATH="$NODE_PATH:/usr/local/lib/node_modules"
     PATH="$HOME/.bin:$PATH"
     PATH="$PATH:$HOME/util/bin/remindme"
+    PATH="/usr/local/php5/bin:$PATH"
     #PROMPT="%{$fg_bold[cyan]%}%c %{$reset_color%} $ "
     alias md5sum='md5 -r'
 fi;
