@@ -2,9 +2,10 @@
 # Usage:
    $ git_clean_review    # Interactive mode
    $ git_clean_review -y # Force YES
+   $ git_clean_review -q search_tem # Search for a specific term, defaults to username
 
 <?php
-$opts = getopt('y');
+$opts = getopt('yq:');
 define('YES', isset($opts['y']));
 
 function ask($question) {
@@ -16,7 +17,11 @@ function ask($question) {
     return ($answer == 'Y' || $answer == 'YES');
 }
 
-$me = trim(`whoami`);
+if (!empty($opts['q'])) {
+    $me = $opts['q'];
+} else {
+    $me = trim(`whoami`);
+}
 if (ask("Do you want to prune your local repo?")) {
     `git remote prune origin`;
 }
@@ -28,7 +33,7 @@ if ($your_branch_list == '') {
 }
 $count = count($your_branches);
 
-echo "Found $count review branches of yours on origin!\n";
+echo "Found $count review branches matching '$me' on origin!\n";
 $removed = 0;
 foreach($your_branches as $branch) {
     $branch = str_replace('origin/', '', strtolower(trim($branch)));
