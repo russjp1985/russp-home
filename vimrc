@@ -60,6 +60,7 @@ noremap  <C-J> :set mouse=a<CR>:set number<CR>
 map  <D-S> :w<CR>
 map  <C-S> :w<CR>
 
+
 """ Position
 
 " Tell vim to remember certain things when we exit

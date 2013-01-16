@@ -1,2 +1,7 @@
 #!/usr/bin/env php
-<?php print(strlen(trim(fgets(STDIN))))."\n";
+<?php
+$str = '';
+while (($buffer = fgets(STDIN)) !== false) {
+    $str .= $buffer;
+}
+print(strlen(trim($str)))."\n";
