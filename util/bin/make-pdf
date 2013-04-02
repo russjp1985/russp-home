@@ -1,0 +1,31 @@
+#!/usr/bin/env php
+<?php
+
+function color() {
+    return rand(0, 255);
+}
+
+$opts = getopt('f:');
+
+$filename = isset($opts['f']) ? $opts['f'] : 'file.pdf';
+
+$path = getcwd().'/'.$filename;
+$jpeg = $path.'.jpg';
+
+$x = rand(100, 800);
+$y = rand(100, 800);
+$image = imagecreatetruecolor($x, $y);
+
+// Create 2 - 10 random colored rectangle
+foreach(range(1, rand(2, 10)) as $rec) {
+    $color = imagecolorallocate($image, color(), color(), color());
+    $x1 = rand(0, $x);
+    $y1 = rand(0, $y);
+    imagerectangle($image, $x1, $y1, rand($x1, $x), rand($y1, $y), $color);
+}
+
+imagejpeg($image, $jpeg);
+`sips -s format pdf $jpeg --out $path`;
+unlink($jpeg);
+echo "Created '$path'\n";
+`open $path`;
