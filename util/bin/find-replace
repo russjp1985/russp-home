@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+for file in $(grep -il "isValidMimeType" **/*.php)
+  do
+      sed -e "s/isValidMimeType/identifyMimeType/ig" $file > /tmp/tempfile.tmp
+    mv /tmp/tempfile.tmp $file
+done
