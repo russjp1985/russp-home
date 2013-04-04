@@ -5,17 +5,18 @@ function color() {
     return rand(0, 255);
 }
 
-$opts = getopt('f:r');
+$opts = getopt('f:t:r');
 
 if (isset($opts['r'])) {
     $words = explode("\n", trim(file_get_contents('/usr/share/dict/words')));
-    $filename = $words[array_rand($words)].'.pdf';
+    $filename = $words[array_rand($words)];
 } else {
-    $filename = isset($opts['f']) ? $opts['f'] : 'file.pdf';
+    $filename = isset($opts['f']) ? $opts['f'] : 'file';
 }
 
+$type = (isset($opts['t'])) ? $opts['t'] : 'pdf';
+
 $path = getcwd().'/'.$filename;
-$jpeg = $path.'.jpg';
 
 $x = rand(100, 800);
 $y = rand(100, 800);
@@ -29,8 +30,22 @@ foreach(range(3, rand(4, 14)) as $rec) {
     imagerectangle($image, $x1, $y1, rand($x1, $x), rand($y1, $y), $color);
 }
 
-imagejpeg($image, $jpeg);
-`sips -s format pdf $jpeg --out $path`;
-unlink($jpeg);
-echo "Created '$path'\n";
-`open $path`;
+$final = $path;
+if ($type == 'png') {
+    $final = $path.'.png';
+    imagepng($image, $final);
+} else if ($type == 'gif') {
+    $final = $path.'.gif';
+    imagegif($image,  $final);
+} else {
+    $final = $path.'.jpg';
+    imagejpeg($image, $final);
+}
+
+if ($type == 'pdf') {
+    `sips -s format pdf $path.jpg --out $path.pdf`;
+    unlink($path.'.jpg');
+    $final = $path.'.pdf';
+}
+echo "Created '$final'\n";
+`open $final`;
