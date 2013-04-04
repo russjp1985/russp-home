@@ -5,9 +5,14 @@ function color() {
     return rand(0, 255);
 }
 
-$opts = getopt('f:');
+$opts = getopt('f:r');
 
-$filename = isset($opts['f']) ? $opts['f'] : 'file.pdf';
+if (isset($opts['r'])) {
+    $words = explode("\n", trim(file_get_contents('/usr/share/dict/words')));
+    $filename = $words[array_rand($words)].'.pdf';
+} else {
+    $filename = isset($opts['f']) ? $opts['f'] : 'file.pdf';
+}
 
 $path = getcwd().'/'.$filename;
 $jpeg = $path.'.jpg';
@@ -17,7 +22,7 @@ $y = rand(100, 800);
 $image = imagecreatetruecolor($x, $y);
 
 // Create 2 - 10 random colored rectangle
-foreach(range(1, rand(2, 10)) as $rec) {
+foreach(range(3, rand(4, 14)) as $rec) {
     $color = imagecolorallocate($image, color(), color(), color());
     $x1 = rand(0, $x);
     $y1 = rand(0, $y);
