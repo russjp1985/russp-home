@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+$input = '';
+while($line = fgets(STDIN)) {
+    $input .= $line;
+}
+
+$opts = getopt('r:s:');
+$remove = trim($opts['r']);
+$substitute = trim(isset($opts['s']) ? '' : $opts['s']); 
+
+echo str_replace($remove, $substitute, $input);
