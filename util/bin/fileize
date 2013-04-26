@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+$opts = getopt('f:');
+$file = $opts['f'];
+
+$path = realpath($file);
+$finfo = finfo_open(FILEINFO_MIME_TYPE);
+$mimetype = finfo_file($finfo, $path, FILEINFO_MIME_TYPE);
+finfo_close($finfo);
+$name = basename($file);
+
+echo "\"@file=@$path;type=$mimetype&name=$name\"";

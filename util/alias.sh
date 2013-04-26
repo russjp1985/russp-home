@@ -25,9 +25,8 @@ function mini() {
 
 alias lwd=echo `pwd` > ~/.lwd
 
-function cim() {
-  touch $1;
-  vim $1
+function code_i_wrote() {
+    git log --author `whoami` --since `php -r "echo date('Y-m-d', strtotime('$1'));"` --oneline | awk '{print $1}' | xargs git show | grep '^\+[^\+]' | wc -l
 }
 
 function hist() {
