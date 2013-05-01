@@ -41,6 +41,7 @@ $output = `git remote -v | grep origin | head -n 1`;
 list($remote_name, $location, $command) = preg_split('/\s+/', trim($output));
 
 $url = trim($location);
+$url = preg_replace('/^git:\/\//', 'https://', $url);
 $url = preg_replace('/^git@/', 'https://', $url);
 $url = preg_replace('/\.com:/', '.com/', $url);
 $url = preg_replace('/\.git$/', '', $url);
@@ -53,5 +54,7 @@ $repo_name = array_pop($parts);
 $parts = explode($repo_name, $filename);
 $relative_path = array_pop($parts);
 
-$url = $url.'/blob/master'.$relative_path.$line;
+$current_branch = trim(`git rev-parse --abbrev-ref HEAD`);
+
+$url = $url . '/blob/' . $current_branch . $relative_path . $line;
 echo $url;
