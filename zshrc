@@ -60,4 +60,19 @@ if [[ -f $HOME/Checkouts/local-scripts/init.sh ]]; then
     source $HOME/Checkouts/local-scripts/init.sh
 fi;
 
+# I'm not OSX, I must be on some remove server
+if [[ ! (-d $HOME/Library) ]]; then
+
+    # run a command on the SSH_CLIENT (your mac)
+    alias mdo='ssh ${SSH_CLIENT%% *} '
+    # # copy from stdin to the clipboard
+    alias mcopy='mdo mcopy'
+    # open argument using the default program
+    alias mopen='mdo mopen'
+
+else
+    alias mcopy='pbcopy'
+    alias mopen='open'
+fi;
+
 PATH="$HOME/dev/DevTools:$PATH"
