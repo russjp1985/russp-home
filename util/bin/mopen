@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+$c = '';
+while ($line = fgets(STDIN)) {
+    $c .= $line;
+}
+$c = trim($c);
+$client = trim(`echo \${SSH_CLIENT} | awk '{print $1}'`);
+
+echo "_________________\n";
+$cmd = "ssh $client 'open $c'";
+echo $cmd."\n";
+`$cmd`;
+echo "^^^^^^^^^^^^^^^^^\n";
