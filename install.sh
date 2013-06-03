@@ -1,14 +1,30 @@
-cd ~
-mkdir -f Checkouts
-cd Checkouts
+# Create folders, checkout code, and enter that directory
+CHECKOUT_PATH=$HOME/Checkouts
+CODE_PATH=$CHECKOUT_PATH/russp-home
+
+mkdir -p $CHECKOUT_PATH
+cd $CHECKOUT_PATH
 git clone git@github.com:russjp1985/russp-home.git
-cd russp-home
+cd $CODE_PATH
 
-ln -s `pwd`/vim ~/.vim
-ln -s `pwd`/vimrc ~/.vimrc
-ln -s `pwd`/zshrc ~/.zshrc
-ln -s `pwd`/gvimrc ~/.gvimrc
-ln -s `pwd`/util ~/util
+# Erase existing and create new dotfiles and dotfolders
+rm $HOME/.vimrc
+ln -s $CHECKOUT_PATH/vimrc ~/.vimrc
 
-git submodule update  --init
+rm $HOME/.zshrc
+ln -s $CHECKOUT_PATH/zshrc $HOME/.zshrc
+
+rm $HOME/.gvimrc
+ln -s $CHECKOUT_PATH/gvimrc $HOME/.gvimrc
+
+rm -rf $HOME/.vim
+ln -s $CHECKOUT_PATH/vim $HOME/.vim
+
+rm -rf $HOME/util
+ln -s $CHECKOUT_PATH/util $HOME/util
+
+# Dot files are all in place, initialize all the subrepos
+git submodule update --init
+
+# Restart shell
 zsh
