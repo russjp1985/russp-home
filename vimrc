@@ -15,6 +15,7 @@ set shiftwidth=4
 set shiftround
 set expandtab
 set mouse=a
+set so=14
 
 set list!
 set listchars=tab:>.
