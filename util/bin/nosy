@@ -17,6 +17,7 @@ from optparse import OptionParser
 parser = OptionParser()
 parser.add_option('-t', '--type', dest='type', default=False)
 parser.add_option('-p', '--pwd', dest='pwd', default=None)
+parser.add_option('-i', '--ignore', dest='ignore', default=None)
 (options, args) = parser.parse_args()
 
 type = 'py|php|ppp|txt|html|rb|feature|js|scss|css|jstd|tpl|coffee|conf|README'
@@ -25,6 +26,9 @@ if options.type:
 
 cmd = " ".join(args)
 FILE_REGEX = re.compile(r'({0})$'.format(type))
+
+if options.ignore:
+    IGNORE_REGEX = re.compile(options.ignore)
 STAT_INTERVAL = .25 # seconds
 CRAWL_INTERVAL = 10 # seconds
 
@@ -51,6 +55,9 @@ class Crawler:
         filenames = set([path
                          for path in paths
                          if re.search(FILE_REGEX, path)])
+        if options.ignore:
+            filenames = set([path for path in filenames
+                                    if not re.search(IGNORE_REGEX, path)])
         self.filenames = filenames
         return self.filenames
 
@@ -83,11 +90,11 @@ def print_changes(changed_paths):
     if changed_paths:
         print '      Changes:', ', '.join(sorted(changed_paths))
 
-
 def change_generator():
     yield []
     crawler = Crawler()
     old_checksum = crawler.checksum()
+
 
     while True:
         time.sleep(STAT_INTERVAL)
@@ -105,6 +112,7 @@ def change_generator():
 
             # Add any files that exist in only one checksum
             changes = old_keys.symmetric_difference(new_keys)
+
             # Add any files that exist in both but changed
             changes.update([key for key in common_keys
                             if new_checksum[key] != old_checksum[key]])
