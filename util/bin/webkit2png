@@ -28,6 +28,7 @@ __version__ = "0.5"
 
 import sys
 import optparse
+import time
 
 try:
   import Foundation
@@ -157,8 +158,8 @@ class WebkitLoad (Foundation.NSObject, WebKit.protocols.WebFrameLoadDelegate):
     def doGrab(self,timer):
             webview = timer.userInfo()
             view = webview.mainFrame().frameView().documentView()
-
             self.resizeWebview(view)
+
 
             URL = webview.mainFrame().dataSource().initialRequest().URL().absoluteString()
             filename = self.makeFilename(URL, self.options)
