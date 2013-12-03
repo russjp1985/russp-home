@@ -17,3 +17,4 @@ C-A "       - Split Pane (Horizontal)            %           - Go to end of line
                                                  Y           - Yank (Copy)
                                                  P           - Paste
                                                  U           - Undo
+                                                 C-P         - Fuzzy finder
