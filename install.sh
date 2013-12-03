@@ -20,6 +20,9 @@ ln -s $CHECKOUT_PATH/gvimrc $HOME/.gvimrc
 rm -rf $HOME/.vim
 ln -s $CHECKOUT_PATH/vim $HOME/.vim
 
+rm -rf $HOME/.tmux.conf
+ln -s $CHECKOUT_PATH/tmux.confg $HOME/.tmux.conf
+
 rm -rf $HOME/util
 ln -s $CHECKOUT_PATH/util $HOME/util
 
