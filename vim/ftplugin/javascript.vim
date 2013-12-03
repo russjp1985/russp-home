@@ -1,4 +1,4 @@
 source ~/.vim/php-doc.vim
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR>
+inoremap <C-+> <ESC>:call PhpDocSingle()<CR>
+nnoremap <C-=> :call PhpDocSingle()<CR>
+vnoremap <C-=> :call PhpDocRange()<CR>
