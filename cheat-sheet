@@ -1,0 +1,19 @@
+TMUX:                                            VIM:
+=============================================    ============================================
+C-A (Arrow) - Change Pane                        :(Number)   - Go to line
+C-A %       - Split Pane (Vertical)              0           - Go to beginning of line
+C-A "       - Split Pane (Horizontal)            %           - Go to end of line
+                                                 C-b         - Go to beginning of word
+                                                 C-e         - Go to end of word
+                                                 C-(Up)      - Page up
+                                                 C-(Down)    - Page down
+                                                 :e (file)   - Edit file in new buffer
+                                                 \be         - Open buffer list
+                                                 dd          - Delete line
+                                                 :w          - Write file
+                                                 :Ep         - Edit class under cursor (PHP only)
+                                                 V           - Enter visual mode
+                                                 X           - Cut
+                                                 Y           - Yank (Copy)
+                                                 P           - Paste
+                                                 U           - Undo
