@@ -61,3 +61,5 @@ if [[ -f $HOME/Checkouts/local-scripts/init.sh ]]; then
 fi;
 
 PATH="$HOME/dev/DevTools:$PATH"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
