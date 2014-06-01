@@ -107,3 +107,6 @@ nmap <C-B> :FufBuffer<CR>
 call pathogen#infect('~/Checkouts/local-scripts/vim-bundles')
 let g:dbgPavimPort = 9000
 let g:dbgPavimBreakAtEntry = 0
+
+scriptencoding utf-8
+set encoding=utf-8

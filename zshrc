@@ -3,6 +3,9 @@ if [[ -f $HOME/.lwd ]]; then
     cd `cat $HOME/.lwd`
 fi
 
+HISTSIZE=100000
+
+
 if [[ -f $HOME/.hostname ]]; then
     HOST_ALIAS=`cat $HOME/.hostname`
 else
