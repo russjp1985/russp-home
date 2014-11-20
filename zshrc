@@ -3,6 +3,9 @@ if [[ -f $HOME/.lwd ]]; then
     cd `cat $HOME/.lwd`
 fi
 
+HISTSIZE=100000
+
+
 if [[ -f $HOME/.hostname ]]; then
     HOST_ALIAS=`cat $HOME/.hostname`
 else
@@ -72,3 +75,5 @@ function save_notes() {
 }
 
 PATH="$HOME/dev/DevTools:$PATH"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

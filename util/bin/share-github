@@ -3,13 +3,14 @@
 function usage() {
     echo <<<USAGE
 Creates a github link for local file and line number
+ -R    Open in remote client
  -h    Help (what you are seeing)
  -l    Line number (optional)
  -f    File name (required)
 USAGE;
     exit(0);
 }
-$opts = getopt('f:l:h');
+$opts = getopt('f:l:hR');
 
 if (isset($opts['h'])) {
     usage();
@@ -57,4 +58,10 @@ $relative_path = array_pop($parts);
 $current_branch = trim(`git rev-parse --abbrev-ref HEAD`);
 
 $url = $url . '/blob/' . $current_branch . $relative_path . $line;
+
+if (isset($opts['R'])) {
+    $me = trim(`whoami`);
+    echo "> Opening on remote server\n";
+    shell_exec("echo $url | ssh `echo $me@\$SSH_CLIENT | awk '{print $1}'` xargs open");
+}
 echo $url;

@@ -10,6 +10,9 @@ alias ec="edit-class"
 alias sha1sum="shasum"
 alias now="php -r 'echo time();'"
 
+# Join my standard editor session
+alias rocknroll="tmux -u attach-session -t editor"
+
 growl() { echo -e $'\e]9;'$REPLY'\007' ; return ; }
 
 function trash() {
