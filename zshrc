@@ -60,4 +60,15 @@ if [[ -f $HOME/Checkouts/local-scripts/init.sh ]]; then
     source $HOME/Checkouts/local-scripts/init.sh
 fi;
 
+function take_notes() {
+    vim $HOME/Checkouts/Notes/MeetingNotes/`date +%Y-%m-%d_%H-%M`.md
+}
+
+function save_notes() {
+    cd $HOME/Checkouts/Notes
+    git add .
+    git commit -m 'Saving notes...'
+    git pull --rebase && git push origin master
+}
+
 PATH="$HOME/dev/DevTools:$PATH"
