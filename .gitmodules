@@ -67,3 +67,6 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/cocao"]
+	path = vim/bundle/cocao
+	url = https://github.com/kentaroi/cocoa.vim.git
