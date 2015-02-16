@@ -70,3 +70,6 @@
 [submodule "vim/bundle/cocao"]
 	path = vim/bundle/cocao
 	url = https://github.com/kentaroi/cocoa.vim.git
+[submodule "vim/bundle/hound.vim"]
+	path = vim/bundle/hound.vim
+	url = https://github.com/urthbound/hound.vim.git
