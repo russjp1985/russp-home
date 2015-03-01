@@ -73,3 +73,6 @@
 [submodule "vim/bundle/hound.vim"]
 	path = vim/bundle/hound.vim
 	url = https://github.com/urthbound/hound.vim.git
+[submodule "vim/bundle/vim-jsx"]
+	path = vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
