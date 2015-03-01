@@ -37,6 +37,7 @@ set listchars=trail:.
  au BufRead,BufNewFile *.t         set filetype=perl
  au BufRead,BufNewFile *.thtml     set filetype=php
  au BufRead,BufNewFile *nginx*     set filetype=nginx
+ au BufRead,BufNewFile *.hb        set filetype=handlebars
  au BufRead,BufNewFile Vagrantfile set filetype=ruby
 
  " Apache config files
