@@ -111,6 +111,7 @@ let g:dbgPavimBreakAtEntry = 0
 
 " jsx
 let g:jsx_pragma_required = 0
+let g:jsx_ext_required = 0
 
 scriptencoding utf-8
 set encoding=utf-8
