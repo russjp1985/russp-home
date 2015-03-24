@@ -78,8 +78,11 @@ PATH="$HOME/dev/DevTools:$PATH"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/russp/GoogleAppEngine/google-cloud-sdk/path.zsh.inc'
 
-# The next line enables bash completion for gcloud.
-source '/Users/russp/GoogleAppEngine/google-cloud-sdk/completion.zsh.inc'
+if [[ -d $HOME/GoogleAppEngine ]]; then
+    # The next line updates PATH for the Google Cloud SDK.
+    source '/Users/russp/GoogleAppEngine/google-cloud-sdk/path.zsh.inc'
+
+    # The next line enables bash completion for gcloud.
+    source '/Users/russp/GoogleAppEngine/google-cloud-sdk/completion.zsh.inc'
+fi;
