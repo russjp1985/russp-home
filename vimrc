@@ -113,5 +113,8 @@ let g:dbgPavimBreakAtEntry = 0
 let g:jsx_pragma_required = 0
 let g:jsx_ext_required = 0
 
+" allow chanigng unsaved buffers
+set hidden
+
 scriptencoding utf-8
 set encoding=utf-8

@@ -74,7 +74,7 @@ function save_notes() {
     git pull --rebase && git push origin master
 }
 
-PATH="$HOME/dev/DevTools:$PATH"
+PATH="/sbin:/usr/etsy/builda/bin:$HOME/dev/DevTools:$PATH"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
