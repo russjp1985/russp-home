@@ -5,9 +5,11 @@ let Vimphpcs_Standard='/home/rposluszny/development/Web/tests/standards/stable-r
 """ PHP
 " Doc functions
 source ~/.vim/php-doc.vim
-inoremap <C-=> <ESC>:call PhpDocSingle()<CR>
-nnoremap <C-=> :call PhpDocSingle()<CR>
-vnoremap <C-=> :call PhpDocRange()<CR>
+
+noremap <C-P> <ESC>:call PhpDocSingle()<CR>
+inoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
+nnoremap <C-H> :Php <q-args>
 
 set tabstop=4
 set softtabstop=4
