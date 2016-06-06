@@ -2,9 +2,6 @@
 CHECKOUT_PATH=$HOME/Checkouts
 CODE_PATH=$CHECKOUT_PATH/russp-home
 
-mkdir -p $CHECKOUT_PATH
-cd $CHECKOUT_PATH
-git clone git@github.com:russjp1985/russp-home.git
 cd $CODE_PATH
 
 # Erase existing and create new dotfiles and dotfolders
