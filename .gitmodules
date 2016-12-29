@@ -82,3 +82,6 @@
 [submodule "vim/bundle/php.vim"]
 	path = vim/bundle/php.vim
 	url = https://github.com/StanAngeloff/php.vim.git
+[submodule "tablify"]
+	path = tablify
+	url = https://github.com/russpos/tablify.git
