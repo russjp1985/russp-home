@@ -77,6 +77,7 @@ function save_notes() {
 PATH="/sbin:/usr/etsy/builda/bin:$HOME/dev/DevTools:$PATH"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.composer/vendor/bin
 
 
 if [[ -d $HOME/GoogleAppEngine ]]; then
