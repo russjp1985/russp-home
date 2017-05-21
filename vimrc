@@ -129,3 +129,5 @@ augroup phpSyntaxOverride
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
+
+nnoremap gp :silent %!prettier --stdin all<CR>
