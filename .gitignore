@@ -5,4 +5,5 @@ vim/.netrwhist
 vim/plugin/nerdtree
 vim/plugin/nerdtree*
 util/bin/node_modules
+util/bin/.icons_hidden
 *.DS_Store

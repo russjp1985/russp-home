@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+const TRUE_TXT  = "true";
+const FALSE_TXT = "false";
+
+$lockpath      = dirname(__FILE__).'/.icons_hidden';
+$current_state = (file_exists($lockpath))      ? file_get_contents($lockpath) : TRUE_TXT;
+$new_state     = ($current_state == TRUE_TXT) ? FALSE_TXT : TRUE_TXT;
+
+`defaults write com.apple.finder CreateDesktop $new_state`;
+`killall Finder`;
+
+file_put_contents($lockpath, $new_state);
+
