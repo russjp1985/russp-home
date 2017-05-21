@@ -1234,7 +1234,7 @@ BEGIN {
         hh          => [qw( h )],
         html        => [qw( htm html shtml thtml xhtml )],
         java        => [qw( java properties )],
-        js          => [qw( js )],
+        js          => [qw( js jsx )],
         jsp         => [qw( jsp jspx jhtm jhtml )],
         lisp        => [qw( lisp lsp )],
         lua         => [qw( lua )],
