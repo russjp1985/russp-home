@@ -5,6 +5,8 @@ fi
 
 HISTSIZE=100000
 
+alias t=touch
+
 
 if [[ -f $HOME/.hostname ]]; then
     HOST_ALIAS=`cat $HOME/.hostname`
