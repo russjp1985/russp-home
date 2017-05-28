@@ -6,4 +6,8 @@ git pull origin master
 git push origin master
 git status
 
+cd ~/.oh-my-zsh
+git pull origin master
+git status
+
 cd $PWD
