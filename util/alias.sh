@@ -9,6 +9,8 @@ alias lc="clear; ls --width=1"
 alias ec="edit-class"
 alias sha1sum="shasum"
 alias now="php -r 'echo time();'"
+alias md5sum='md5 -r'
+alias t=touch
 
 # Join my standard editor session
 alias rocknroll="tmux -u attach-session -t editor"
