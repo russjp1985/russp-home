@@ -4,6 +4,8 @@ CODE_PATH=$CHECKOUT_PATH/russp-home
 
 cd $CODE_PATH
 
+ln -s $CODE_PATH/zsh_customization ~/.zsh_customization
+
 # Erase existing and create new dotfiles and dotfolders
 rm $HOME/.vimrc
 ln -s $CODE_PATH/vimrc ~/.vimrc

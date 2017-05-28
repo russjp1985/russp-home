@@ -14,12 +14,13 @@ else
     HOST_ALIAS=`hostname`
 fi;
 
-if [[ $TERM != 'dumb' ]]; then
-    export ZSH=$HOME/.oh-my-zsh
+ZSH_CUSTOM=$HOME/.zsh_customization
+
+export ZSH=$HOME/.oh-my-zsh
 
     # Set to the name theme to load.
     # Look in ~/.oh-my-zsh/themes/
-    export ZSH_THEME="russp"
+export ZSH_THEME="russp"
 
     # Set to this to use case-sensitive completion
     # export CASE_SENSITIVE="true"
@@ -32,7 +33,7 @@ if [[ $TERM != 'dumb' ]]; then
 
     # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
     # Example format: plugins=(rails git textmate ruby lighthouse)
-    plugins=(git osx vagrant vi-mode svn brew )
+    plugins=(git osx vagrant vi-mode svn)
 
     source $ZSH/oh-my-zsh.sh
 
@@ -49,13 +50,6 @@ if [[ $TERM != 'dumb' ]]; then
     PATH="/usr/local/php5/bin:$PATH"
     #PROMPT="%{$fg_bold[cyan]%}%c %{$reset_color%} $ "
     alias md5sum='md5 -r'
-fi;
-
-if [[ $MODE == 'mini' ]]; then
-    PROMPT=""
-    PROMPT="=============================$ "
-    clear
-fi;
 
 export EDITOR=vim
 . ~/util/export_all.sh
@@ -64,19 +58,6 @@ if [[ -f $HOME/Checkouts/local-scripts/init.sh ]]; then
     export LOCAL_SCRIPTS=$HOME/Checkouts/local-scripts
     source $HOME/Checkouts/local-scripts/init.sh
 fi;
-
-function take_notes() {
-    vim $HOME/Checkouts/Notes/MeetingNotes/`date +%Y-%m-%d_%H-%M`.md
-}
-
-function save_notes() {
-    cd $HOME/Checkouts/Notes
-    git add .
-    git commit -m 'Saving notes...'
-    git pull --rebase && git push origin master
-}
-
-PATH="/sbin:/usr/etsy/builda/bin:$HOME/dev/DevTools:$PATH"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.composer/vendor/bin
