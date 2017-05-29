@@ -28,6 +28,12 @@ ln -s $CODE_PATH/tmux.confg $HOME/.tmux.conf
 rm -rf $HOME/util
 ln -s $CODE_PATH/util $HOME/util
 
+rm -rf $HOME/.zpreztorc
+ln -s $CODE_PATH/zpreztorc $HOME/.zpreztorc
+
+rm -rf $HOME/.zprezto/modules/prompt/external/russp
+ln -s $CODE_PATH/prezto-theme $HOME/.zprezto/modules/prompt/external/russp
+
 # Dot files are all in place, initialize all the subrepos
 git submodule update --init
 
