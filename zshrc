@@ -59,3 +59,6 @@ if [[ -d $HOME/GoogleAppEngine ]]; then
     # The next line enables bash completion for gcloud.
     source '/Users/russp/GoogleAppEngine/google-cloud-sdk/completion.zsh.inc'
 fi;
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
