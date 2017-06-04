@@ -7,9 +7,6 @@
 [submodule "vim/bundle/vim-jade"]
 	path = vim/bundle/vim-jade
 	url = https://github.com/vim-scripts/jade.vim.git
-[submodule "util/bk"]
-	path = util/bk
-	url = https://github.com/russjp1985/bk.git
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
@@ -43,9 +40,6 @@
 [submodule "vim/bundle/vim-jst"]
 	path = vim/bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
-[submodule "util/bin/remindme"]
-	path = util/bin/remindme
-	url = git@github.com:russjp1985/remindme.git
 [submodule "vim/bundle/fuzzyfinder"]
 	path = vim/bundle/fuzzyfinder
 	url = https://github.com/vim-scripts/FuzzyFinder.git
@@ -88,3 +82,9 @@
 [submodule "vim/bundle/vim-node"]
 	path = vim/bundle/vim-node
 	url = https://github.com/moll/vim-node.git
+[submodule "util/bk"]
+	path = util/bk
+	url = git@github.com:russpos/bk.git
+[submodule "util/bin/remindme"]
+	path = util/bin/remindme
+	url = git@github.com:russpos/remindme.git
