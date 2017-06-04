@@ -2,8 +2,11 @@
 CHECKOUT_PATH=$HOME/Checkouts
 CODE_PATH=$CHECKOUT_PATH/russp-home
 
+mkdir -p $CHECKOUT_PATH
+
 git clone git@github.com:russpos/russp-home.git $CODE_PATH
-git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-myzsh
+git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+git clone git@github.com:sorin-ionescu/prezto.git $HOME/.zprezto
 
 cd $CODE_PATH
 
