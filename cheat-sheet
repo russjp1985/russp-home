@@ -1,11 +1,11 @@
 TMUX:                                            VIM:
 =============================================    ============================================
-C-A (Arrow) - Change Pane                        :(Number)   - Go to line
-C-A %       - Split Pane (Vertical)              0           - Go to beginning of line
-C-A "       - Split Pane (Horizontal)            %           - Go to end of line
-                                                 C-b         - Go to beginning of word
-                                                 C-e         - Go to end of word
-                                                 C-(Up)      - Page up
+C-B (Arrow) - Change Pane                        :(Number)   - Go to line
+C-B %       - Split Pane (Vertical)              0           - Go to beginning of line
+C-B "       - Split Pane (Horizontal)            %           - Go to end of line
+C-B S       - List sessions                      C-b         - Go to beginning of word
+C-B $       - Rename the current session         C-e         - Go to end of word
+C-B d       - Detach from the current session    C-(Up)      - Page up
                                                  C-(Down)    - Page down
                                                  :e (file)   - Edit file in new buffer
                                                  \be         - Open buffer list
