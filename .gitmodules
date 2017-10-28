@@ -1,6 +1,3 @@
-[submodule "vim/bundle/vim-bufexplorer"]
-	path = vim/bundle/vim-bufexplorer
-	url = https://github.com/thisivan/vim-bufexplorer.git
 [submodule "vim/bundle/fuzzyfinder"]
 	path = vim/bundle/fuzzyfinder
 	url = https://github.com/vim-scripts/FuzzyFinder.git
