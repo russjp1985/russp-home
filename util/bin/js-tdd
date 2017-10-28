@@ -1,7 +1,0 @@
-#!/bin/sh
-js-test-driver --port 9876 &
-echo "Waiting for server to start ..."
-sleep 4
-open http://localhost:9876/capture -a "Google Chrome"
-open http://localhost:9876/capture -a "Firefox"
-open http://localhost:9876/capture -a "Safari"

@@ -1,5 +1,3 @@
-ZSH_ENG_LOCK=$HOME/.use-prezto
-
 if [[ -f $HOME/.lwd ]]; then
     cd `cat $HOME/.lwd`
 fi
@@ -13,52 +11,33 @@ else
     HOST_ALIAS=`hostname`
 fi;
 
-# If the lock is on, use oh-my-zsh
-# Otherwise, use prezto
-if [[ -f $ZSH_ENG_LOCK ]]; then
-    if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-        source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-    fi
-    autoload -Uz promptinit
-    promptinit
-    prompt russp
-else
-    ZSH_CUSTOM=$HOME/.zsh_customization
-    export EDITOR=vim
-    export ZSH=$HOME/.oh-my-zsh
-    export ZSH_THEME="russp"
-    plugins=(git osx vagrant vi-mode svn)
-    source $ZSH/oh-my-zsh.sh
-fi;
+ZSH_CUSTOM=$HOME/.zsh_customization
+export EDITOR=vim
+export ZSH=$HOME/.oh-my-zsh
+export ZSH_THEME="russp"
+plugins=(git osx vagrant vi-mode svn)
+source $ZSH/oh-my-zsh.sh
 
-# Toggle the lock file to switch between
-# prezto and oh-my-zsh
-function toggle-zsh() {
-    if [[ -f $ZSH_ENG_LOCK ]]; then
-        rm $ZSH_ENG_LOCK;
-    else
-        touch $ZSH_ENG_LOCK;
-    fi;
-    zsh
+function hist() {
+    history | grep -v "history |" | grep -v "hist " | grep $* | tail | grep $*
 }
 
+function cd() {
+  builtin cd $*
+  echo `pwd` > ~/.lwd
+}
 
-. ~/util/export_all.sh
+function gth() {
+    open `git remote -v | grep origin | head -n1 | awk '{print $2}' | sed 's/:/\//' | sed 's/git@/http:\/\//g' | sed 's/\.git//g'`
+}
 
 if [[ -f $HOME/Checkouts/local-scripts/init.sh ]]; then
     export LOCAL_SCRIPTS=$HOME/Checkouts/local-scripts
     source $HOME/Checkouts/local-scripts/init.sh
 fi;
 
+. ~/bk/bk.zsh
 
-
-if [[ -d $HOME/GoogleAppEngine ]]; then
-    # The next line updates PATH for the Google Cloud SDK.
-    source '/Users/russp/GoogleAppEngine/google-cloud-sdk/path.zsh.inc'
-
-    # The next line enables bash completion for gcloud.
-    source '/Users/russp/GoogleAppEngine/google-cloud-sdk/completion.zsh.inc'
-fi;
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+PATH="$HOME/.bin:$PATH"
+PATH=~/bin:$PATH
+export PATH

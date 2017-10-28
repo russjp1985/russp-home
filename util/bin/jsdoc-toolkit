@@ -1,4 +1,0 @@
-#!/bin/sh
-java -jar /Users/russp/util/tools/jsdoc-toolkit/jsrun.jar  \
-    /Users/russp/util/tools/jsdoc-toolkit/app/run.js $* \
-    -t=/Users/russp/util/tools/jsdoc-toolkit/templates/jsdoc2

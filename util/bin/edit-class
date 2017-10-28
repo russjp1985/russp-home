@@ -1,9 +1,0 @@
-#!/bin/sh
-CLASS=$1
-if [[ "$CLASS" = '' ]]; then
-    read CLASS
-fi;
-echo $CLASS
-BASE=$HOME/dev/Web/phplib/
-FILE=`echo $CLASS | sed "s/_/\//g"`
-open $BASE$FILE.php -a /Applications/MacVim.app

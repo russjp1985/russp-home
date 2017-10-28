@@ -1,4 +1,0 @@
-#!/usr/bin/php
-<?php
-$input = stream_get_contents(STDIN);
-echo trim($input);

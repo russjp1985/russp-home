@@ -1,7 +1,0 @@
-#!/usr/bin/env python2.6
-import vcs_diff
-
-vcs_diff.main({'cmd' :     'git diff',
-               'restore' : 'git checkout {0}',
-               'splitter': 'index '})
-

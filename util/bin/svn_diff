@@ -1,7 +1,0 @@
-#!/usr/bin/python
-import vcs_diff
-
-vcs_diff.main({'cmd' :     'svn diff',
-               'restore' : 'svn revert {0}',
-               'splitter': 'Index: '})
-
