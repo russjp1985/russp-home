@@ -36,7 +36,7 @@ if [[ -f $HOME/Checkouts/local-scripts/init.sh ]]; then
     source $HOME/Checkouts/local-scripts/init.sh
 fi;
 
-. ~/bk/bk.zsh
+. ~/Checkouts/bk/bk.zsh
 
 PATH="$HOME/.bin:$PATH"
 PATH=~/bin:$PATH
