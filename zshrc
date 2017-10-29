@@ -1,5 +1,5 @@
 if [[ -f $HOME/.lwd ]]; then
-    cd `cat $HOME/.lwd`
+    cd "`cat $HOME/.lwd`"
 fi
 
 HISTSIZE=100000
