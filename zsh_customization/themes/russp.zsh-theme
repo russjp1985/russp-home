@@ -1,5 +1,11 @@
 function russp_theme_get_hosticon() {
-    echo ♛
+    # ♛
+    if [[ -d /Users/ ]]; then
+        echo ☕
+        return
+    fi;
+
+    echo 🍕
 }
 
 PROMPT='%{$fg_bold[white]%}$(russp_theme_get_hosticon) %{$fg_bold[yellow]%}%t %{$fg_bold[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
