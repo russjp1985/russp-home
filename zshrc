@@ -73,7 +73,7 @@ fi;
 
 # Load bk
 # https://github.com/russpos/bka
-if [[ -f ~/Checkouts/bk ]]; then
+if [[ -d ~/Checkouts/bk ]]; then
     . ~/Checkouts/bk/bk.zsh
 else
     echo "Can't find your bookmark helper! Try cloning it to: ~/Checkouts"
