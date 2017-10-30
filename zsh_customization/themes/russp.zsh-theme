@@ -1,4 +1,8 @@
 function russp_theme_get_hosticon() {
+    if [[ -f $HOME/.hostmoji ]]; then
+        cat $HOME/.hostmoji
+        return
+    fi;
     # ♛
     if [[ -d /Users/ ]]; then
         echo ☕
