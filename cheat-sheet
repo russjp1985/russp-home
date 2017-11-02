@@ -18,3 +18,5 @@ C-B d       - Detach from the current session    C-(Up)      - Page up
                                                  P           - Paste
                                                  U           - Undo
                                                  C-P         - Fuzzy finder
+                                                 :vsp        - Split the pane vertically
+                                                 C-w <arrow> - Move to pane
