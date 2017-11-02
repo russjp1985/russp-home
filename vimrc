@@ -38,13 +38,19 @@ noremap  <C-J> :set mouse=a<CR>:set number<CR>
 map  <D-S> :w<CR>
 map  <C-S> :w<CR>
 
-colorscheme russp
-
 nmap <C-T> :FufFile<CR>
 nmap <C-B> :FufBuffer<CR>
 
 " allow chanigng unsaved buffers
 set hidden
+
+colorscheme russp
+
+try
+    source $HOME/Checkouts/local-scripts/vimrc
+catch
+    " No local overrides. that's OK
+endtry
 
 scriptencoding utf-8
 set encoding=utf-8
