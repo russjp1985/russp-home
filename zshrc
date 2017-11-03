@@ -12,12 +12,12 @@ fi
 
 
 
-# Set the size of the history to be really long, and add 
+# Set the size of the history to be really long, and add
 # the helper function `hist` to easily grep it.
 HISTSIZE=100000
 
 function hist() {
-    history | grep -v "history |" | grep -v "hist " | grep $* | tail | grep $*
+    history | grep -v "history |" | grep -v "hist " | grep $*
 }
 
 
