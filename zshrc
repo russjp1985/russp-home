@@ -69,6 +69,11 @@ if [[ -f $HOME/Checkouts/local-scripts/init.sh ]]; then
 fi;
 
 
+function setmoji() {
+    echo $* > ~/.hostmoji
+}
+
+
 
 
 # Load bk
