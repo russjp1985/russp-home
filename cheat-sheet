@@ -6,8 +6,8 @@ C-B "       - Split Pane (Horizontal)            %           - Go to end of line
 C-B S       - List sessions                      C-b         - Go to beginning of word
 C-B $       - Rename the current session         C-e         - Go to end of word
 C-B d       - Detach from the current session    C-(Up)      - Page up
-                                                 C-(Down)    - Page down
-                                                 :e (file)   - Edit file in new buffer
+C-B (       - Previous session                   C-(Down)    - Page down
+C-B )       - Next session                       :e (file)   - Edit file in new buffer
                                                  \be         - Open buffer list
                                                  dd          - Delete line
                                                  :w          - Write file
