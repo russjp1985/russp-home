@@ -52,10 +52,5 @@ catch
     " No local overrides. that's OK
 endtry
 
-" Map `Escape` to ‘nothing’ in Normal, Visual, Select, Operator-pending modes
-noremap: <esc> <nop>
-" " Map `Escape` to ‘nothing’ in Insert and Command modes
-noremap!: <esc> <nop>
-
 scriptencoding utf-8
 set encoding=utf-8
