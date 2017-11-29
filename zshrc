@@ -2,13 +2,25 @@
 # Every time we kick off a new shell, go to that folder.
 function cd() {
   builtin cd $*
-  echo `pwd` > ~/.lwd
+  echo `pwd` >> ~/.lwd
+  echo "$(tail -n100 $HOME/.lwd)" > $HOME/.lwd
 }
 
 if [[ -f $HOME/.lwd ]]; then
-    cd "`cat $HOME/.lwd`"
+    # use the builtin cd to go to the last line in the lwd history
+    # Don't use cd() so we don't put the same directory back on the stack
+    builtin cd "`tail -n1 $HOME/.lwd`"
 fi
 
+# cd "backwards"
+# Go to the last place you were in history.
+function cdb() {
+    # cd to the 2nd to last place in history
+    builtin cd "$(cat $HOME/.lwd | tail -n2 | head -n1)"
+
+    # Rewrite the history file removing the last line
+    echo "$(cat $HOME/.lwd | sed \$d)" > $HOME/.lwd
+}
 
 
 
