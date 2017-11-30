@@ -12,14 +12,22 @@ if [[ -f $HOME/.lwd ]]; then
     builtin cd "`tail -n1 $HOME/.lwd`"
 fi
 
-# cd "backwards"
-# Go to the last place you were in history.
-function cdb() {
-    # cd to the 2nd to last place in history
-    builtin cd "$(cat $HOME/.lwd | tail -n2 | head -n1)"
+# cd "last"
+# Go the last place in your history iwth no modification to your history.
+# Helpful for multiple panes / tabs, so you can cd into the directory
+# you just cd()'ed into in another tab without pushing more of the same
+# directory onto your stack.
+function cdl() {
+  builtin cd "$(cat ~/.lwd | tail -n 1)"
+}
 
+# cd "backwards"
+# Go to the previous place you were in history. Pops the last item off 
+# of the stack and goes to the one before that.
+function cdb() {
     # Rewrite the history file removing the last line
     echo "$(cat $HOME/.lwd | sed \$d)" > $HOME/.lwd
+    cdl
 }
 
 
