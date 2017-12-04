@@ -16,6 +16,7 @@ set shiftround
 set expandtab
 set mouse=a
 set so=14
+set ttymouse=xterm2
 
 set list!
 set listchars=tab:>.
