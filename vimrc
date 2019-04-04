@@ -28,6 +28,8 @@ filetype plugin on
 filetype indent on
 autocmd FileType python set textwidth=79
 
+inoremap ` <ESC>
+
 au BufEnter * if &filetype == "python" | match ErrorMsg '\%>79v.\+' | endif
 
 vnoremap < <gv
