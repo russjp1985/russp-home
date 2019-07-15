@@ -93,7 +93,8 @@ function setmoji() {
     echo $* > ~/.hostmoji
 }
 
-
+alias hideDesktop='defaults write com.apple.finder CreateDesktop false; killall Finder'
+alias showDesktop='defaults write com.apple.finder CreateDesktop true; killall Finder'
 
 
 # Load bk
