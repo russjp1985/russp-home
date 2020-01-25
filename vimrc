@@ -33,6 +33,8 @@ filetype plugin on
 filetype indent on
 autocmd FileType python set textwidth=79
 
+inoremap ` <ESC>
+
 au BufEnter * if &filetype == "python" | match ErrorMsg '\%>79v.\+' | endif
 
 vnoremap < <gv
@@ -51,6 +53,11 @@ nmap <C-B> :FufBuffer<CR>
 set hidden
 
 colorscheme russp
+
+" Enable snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 try
     source $HOME/Checkouts/local-scripts/vimrc
