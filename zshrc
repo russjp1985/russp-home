@@ -68,7 +68,10 @@ export ZSH_THEME="russp"
 plugins=(git osx vi-mode svn)
 source $ZSH/oh-my-zsh.sh
 
-
+# Make vim point to nvim, if it exists
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
 
 
 

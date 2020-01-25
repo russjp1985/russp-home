@@ -16,13 +16,18 @@ set shiftround
 set expandtab
 set mouse=a
 set so=14
-set ttymouse=xterm2
 
 set list!
 set listchars=tab:>.
 set listchars=trail:.
 
-" autocmd BufWritePre * :%s/\s\+$//e
+
+" Settings that have been deprecated in nvim. Keeping this here
+" for settings on machines that vim.
+if !has('nvim')
+  set ttymouse=xterm2
+endif
+
 
 filetype plugin on
 filetype indent on
