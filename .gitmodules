@@ -13,3 +13,6 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "vim/bundle/vim-syntastic"]
+	path = vim/bundle/vim-syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
