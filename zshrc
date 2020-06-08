@@ -96,9 +96,14 @@ function setmoji() {
     echo $* > ~/.hostmoji
 }
 
+# osx helpers
 alias hideDesktop='defaults write com.apple.finder CreateDesktop false; killall Finder'
 alias showDesktop='defaults write com.apple.finder CreateDesktop true; killall Finder'
+alias snooze='pmset sleepnow'
 
+# tmux
+alias tl='tmux ls'
+alias ta='tmux attach-session -t'
 
 # Load bk
 # https://github.com/russpos/bka
